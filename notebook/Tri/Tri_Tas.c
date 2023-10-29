@@ -1,7 +1,8 @@
 #include <stdio.h>
 
 // Fonction pour échanger deux éléments dans un tableau
-void swap(int* a, int* b) {
+void swap(int* a, int* b) { //O(n*log(n)) efficace lorsque que contraintes
+                            //mémoire 
     int temp = *a;
     *a = *b;
     *b = temp;

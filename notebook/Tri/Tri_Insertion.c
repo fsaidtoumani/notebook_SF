@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-void triInsertion(int tableau[], int taille) {
+void triInsertion(int tableau[], int taille) { //O(n²) bien pour les tri courts
     int i, j, cle;
     for (i = 1; i < taille; i++) {
         cle = tableau[i];
