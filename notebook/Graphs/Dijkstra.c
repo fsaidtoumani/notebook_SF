@@ -42,6 +42,7 @@ void dijkstra(Graph *g, int src) {
         }
 
         visited[u] = 1;
+        //
         for(int v = 0; v < g->V; v++) {
             if(!visited[v] && g->adj[u][v] && dist[u] + g->adj[u][v] < dist[v]) {
                 dist[v] = dist[u] + g->adj[u][v];
@@ -53,4 +54,21 @@ void dijkstra(Graph *g, int src) {
     for(int i = 0; i < g->V; i++) {
         printf("Distance du sommet %d au sommet %d = %d\n", src, i, dist[i]);
     }
+}
+int main() {
+    Graph g;
+    initGraph(&g, 6); // Création d'un graphe avec 5 sommets (0,1,2,3,4)
+
+    addEdge(&g, 0, 1, 5);
+    addEdge(&g, 0, 2, 3);
+    addEdge(&g, 1, 3, 6);
+    addEdge(&g, 1, 2, 2);
+    addEdge(&g, 2, 4, 4);
+    addEdge(&g, 2, 5, 2);
+    addEdge(&g, 2, 3, 7);
+    addEdge(&g, 3, 4, -1);
+    addEdge(&g, 4, 5, -2);
+
+    dijkstra(&g, 0);
+    return 0;
 }
