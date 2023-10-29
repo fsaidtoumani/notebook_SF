@@ -1,6 +1,4 @@
 #include <stdio.h>
-
-// Le 
 double Tab[600][100];
 double prob(int n, int s, int a, int b) //s = 6n
 {
